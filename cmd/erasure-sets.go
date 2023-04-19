@@ -1060,6 +1060,7 @@ func markRootDisksAsDown(storageDisks []StorageAPI, errs []error) {
 		// Do nothing
 		return
 	}
+	return // disable root disk check
 	infos, ierrs := getHealDiskInfos(storageDisks, errs)
 	for i := range storageDisks {
 		if ierrs[i] != nil && ierrs[i] != errUnformattedDisk {
